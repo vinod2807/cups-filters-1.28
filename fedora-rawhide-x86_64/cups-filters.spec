@@ -11,7 +11,7 @@ Source0:        https://www.openprinting.org/download/cups-filters/cups-filters-
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires: libjpeg-turbo-devel
-BuildRequires: pkgconfig(jpeg)
+BuildRequires: pkgconfig(libjpeg)
 BuildRequires:  make
 BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig
@@ -31,7 +31,7 @@ It provides filters and backends that were removed in newer releases.
 %autosetup
 
 %build
-%configure --disable-static --without-qpdf --with-poppler-cpp --without-jpeg QPDF_CFLAGS= QPDF_LIBS=
+%configure --disable-static --without-qpdf --with-poppler-cpp --with-jpeg QPDF_CFLAGS= QPDF_LIBS=
 make %{?_smp_mflags}
 
 %install

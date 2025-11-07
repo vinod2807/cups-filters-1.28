@@ -14,7 +14,6 @@ BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cups)
 BuildRequires:  pkgconfig(poppler-glib)
-BuildRequires:  foomatic-db-devel
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(libpng)
@@ -47,4 +46,3 @@ make install DESTDIR=%{buildroot}
 - Rebuild on COPR, disable qpdf support for Rawhide
 
 * Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-3
-- Replace removed foomatic-filters-devel with foomatic-db-devel for Rawhide

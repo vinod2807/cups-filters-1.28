@@ -43,7 +43,6 @@ make install DESTDIR=%{buildroot}
 /usr/share/cups
 
 %changelog
-* Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-2
-- Rebuild on COPR, disable qpdf support for Rawhide
-
 * Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-3
+- Add missing BuildRequires for gcc-c++ and libjpeg for Rawhide build
+

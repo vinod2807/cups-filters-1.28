@@ -11,7 +11,6 @@ Source0:        https://www.openprinting.org/download/cups-filters/cups-filters-
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires: pkgconfig(libjpeg)
-BuildRequires: libjpeg-turbo-devel
 BuildRequires:  make
 BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig

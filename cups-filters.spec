@@ -14,7 +14,6 @@ BuildRequires:  pkgconfig(cups)
 BuildRequires:  pkgconfig(poppler-cpp)
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(freetype2)
-BuildRequires:  pkgconfig(qpdf)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  ghostscript-devel
 Requires:       ghostscript
@@ -27,7 +26,7 @@ It provides filters and backends that were removed in newer releases.
 %autosetup
 
 %build
-%configure --disable-static
+%configure --disable-static --without-qpdf
 make %{?_smp_mflags}
 
 %install

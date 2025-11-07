@@ -9,6 +9,7 @@ URL:            https://github.com/OpenPrinting/cups-filters
 Source0:        https://www.openprinting.org/download/cups-filters/cups-filters-%{version}.tar.xz
 
 BuildRequires:  gcc
+BuildRequires:  gcc-c++
 BuildRequires:  make
 BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig

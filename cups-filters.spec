@@ -1,6 +1,6 @@
 Name:           cups-filters
 Version:        1.28.16
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenPrinting CUPS Filters and backends
 License:        GPLv2+
 URL:            https://github.com/OpenPrinting/cups-filters
@@ -38,3 +38,7 @@ make install DESTDIR=%{buildroot}
 /usr/lib*/cups/filter/*
 /usr/lib*/cups/backend/*
 /usr/share/cups
+
+%changelog
+* Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-2
+- Rebuild on COPR, disable qpdf support for Rawhide

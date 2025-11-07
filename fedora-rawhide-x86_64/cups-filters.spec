@@ -15,7 +15,7 @@ BuildRequires:  make
 BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cups)
-BuildRequires:  pkgconfig(poppler-cpp)
+BuildRequires:  pkgconfig(poppler-glib)
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(libpng)
@@ -30,7 +30,7 @@ It provides filters and backends that were removed in newer releases.
 %autosetup
 
 %build
-%configure --disable-static --without-qpdf --with-poppler-cpp QPDF_CFLAGS= QPDF_LIBS=
+%configure --disable-static --without-qpdf --with-poppler-glib QPDF_CFLAGS= QPDF_LIBS=
 make %{?_smp_mflags}
 
 %install

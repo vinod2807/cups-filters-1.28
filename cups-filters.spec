@@ -1,6 +1,6 @@
 Name:           cups-filters
 Version:        1.28.16
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        OpenPrinting CUPS Filters and backends
 License:        GPLv2+
 URL:            https://github.com/OpenPrinting/cups-filters
@@ -12,6 +12,7 @@ BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(cups)
 BuildRequires:  pkgconfig(poppler-cpp)
+BuildRequires:  foomatic-db-devel
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(libpng)
@@ -42,3 +43,6 @@ make install DESTDIR=%{buildroot}
 %changelog
 * Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-2
 - Rebuild on COPR, disable qpdf support for Rawhide
+
+* Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-3
+- Replace removed foomatic-filters-devel with foomatic-db-devel for Rawhide

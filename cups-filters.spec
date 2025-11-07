@@ -1,6 +1,8 @@
 Name:           cups-filters
 Version:        1.28.16
 Release:        3%{?dist}
+# Rawhide no longer ships qpdf-devel; disable qpdf support entirely
+%global _without_qpdf 1
 Summary:        OpenPrinting CUPS Filters and backends
 License:        GPLv2+
 URL:            https://github.com/OpenPrinting/cups-filters
@@ -27,7 +29,7 @@ It provides filters and backends that were removed in newer releases.
 %autosetup
 
 %build
-%configure --disable-static --without-qpdf
+%configure --disable-static --without-qpdf QPDF_CFLAGS= QPDF_LIBS=
 make %{?_smp_mflags}
 
 %install

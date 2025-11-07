@@ -10,6 +10,7 @@ Source0:        https://www.openprinting.org/download/cups-filters/cups-filters-
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
+BuildRequires: libjpeg-turbo-devel
 BuildRequires:  make
 BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig
@@ -44,7 +45,4 @@ make install DESTDIR=%{buildroot}
 
 %changelog
 * Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-3
-- Replace removed foomatic-filters-devel with foomatic-db-devel for Rawhide
-
-* Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-2
-- Rebuild on COPR, disable qpdf support for Rawhide
+- Add missing BuildRequires for gcc-c++ and libjpeg for Rawhide build

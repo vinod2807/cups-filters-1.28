@@ -30,7 +30,7 @@ It provides filters and backends that were removed in newer releases.
 %autosetup
 
 %build
-%configure --disable-static --without-qpdf --with-poppler-glib QPDF_CFLAGS= QPDF_LIBS=
+%configure --disable-static --without-qpdf --with-poppler-glib --without-jpeg QPDF_CFLAGS= QPDF_LIBS=
 make %{?_smp_mflags}
 
 %install

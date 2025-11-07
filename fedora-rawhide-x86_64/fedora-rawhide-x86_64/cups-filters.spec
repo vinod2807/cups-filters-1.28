@@ -1,12 +1,15 @@
 Name:           cups-filters
 Version:        1.28.16
-Release:        1%{?dist}
+Release:        3%{?dist}
+# Rawhide no longer ships qpdf-devel; disable qpdf support entirely
+%global _without_qpdf 1
 Summary:        OpenPrinting CUPS Filters and backends
 License:        GPLv2+
 URL:            https://github.com/OpenPrinting/cups-filters
 Source0:        https://www.openprinting.org/download/cups-filters/cups-filters-%{version}.tar.xz
 
 BuildRequires:  gcc
+BuildRequires:  gcc-c++
 BuildRequires:  make
 BuildRequires:  autoconf automake libtool
 BuildRequires:  pkgconfig
@@ -16,6 +19,7 @@ BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(freetype2)
 BuildRequires:  pkgconfig(libpng)
 BuildRequires:  ghostscript-devel
+BuildRequires:  libjpeg-devel
 Requires:       ghostscript
 
 %description
@@ -26,7 +30,7 @@ It provides filters and backends that were removed in newer releases.
 %autosetup
 
 %build
-%configure --disable-static --without-qpdf
+%configure --disable-static --without-qpdf --with-poppler-cpp QPDF_CFLAGS= QPDF_LIBS=
 make %{?_smp_mflags}
 
 %install
@@ -38,3 +42,8 @@ make install DESTDIR=%{buildroot}
 /usr/lib*/cups/filter/*
 /usr/lib*/cups/backend/*
 /usr/share/cups
+
+%changelog
+* Fri Nov 07 2025 Vinod Kumar <vinod@example.com> - 1.28.16-3
+- Switch to poppler-cpp, fix C++11 and qpdf disablement
+- Add libjpeg-devel for Rawhide build
